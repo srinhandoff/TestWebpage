@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nike Air Zoom Pegasus 41 Men's Road Running Shoes | shopwave</title>
+<meta name="description" content="Demo product page — a front-end practice build in an e-commerce marketplace layout.">
+<style>
+:root{
+  --nav-dark:#131921;
+  --nav-sub:#232f3e;
+  --page-bg:#eaeded;
+  --link:#007185;
+  --link-hover:#c7511f;
+  --price:#b12704;
+  --star:#de7921;
+  --cart-yellow:#ffd814;
+  --cart-yellow-hover:#f7ca00;
+  --buy-orange:#ffa41c;
+  --buy-orange-hover:#fa8900;
+  --success:#007600;
+  --border:#d5d9d9;
+  --text:#0f1111;
+  --muted:#565959;
+  --focus:#e77600;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--font);color:var(--text);
+  background:#fff;font-size:14px;line-height:1.45;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--link-hover);text-decoration:underline}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
+img,svg{max-width:100%;display:block}
+
+/* ---------- header ---------- */
+.masthead{background:var(--nav-dark);color:#fff}
+.masthead-inner{
+  display:flex;align-items:center;gap:6px;
+  padding:6px 14px;max-width:1500px;margin:0 auto;
+}
+.hdr-box{
+  padding:8px 9px;border:1px solid transparent;border-radius:2px;
+  display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap;
+}
+.hdr-box:hover{border-color:#fff}
+.wordmark{font-size:22px;font-weight:700;letter-spacing:-.5px;color:#febd69}
+.wordmark span{color:#fff}
+.deliver-to{line-height:1.2;font-size:12px;color:#ccc}
+.deliver-to strong{display:block;font-size:14px;color:#fff}
+.pin{width:15px;height:15px;fill:#fff;flex:none}
+
+.searchbar{
+  flex:1;display:flex;height:40px;border-radius:4px;overflow:hidden;
+  min-width:180px;border:2px solid transparent;
+}
+.searchbar:focus-within{border-color:#febd69;box-shadow:0 0 0 3px rgba(228,121,17,.5)}
+.search-cat{
+  background:#e6e6e6;border:0;font-size:12px;color:#555;padding:0 8px;
+  border-right:1px solid #cdcdcd;cursor:pointer;font-family:inherit;
+}
+.search-input{flex:1;border:0;padding:0 10px;font-size:15px;font-family:inherit;min-width:0}
+.search-btn{
+  background:#febd69;border:0;width:45px;display:grid;place-items:center;cursor:pointer;
+}
+.search-btn:hover{background:#f3a847}
+.search-btn svg{width:20px;height:20px;fill:var(--nav-dark)}
+
+.cart-link{display:flex;align-items:flex-end;gap:2px;color:#fff;position:relative}
+.cart-link:hover{color:#fff;text-decoration:none}
+.cart-glyph{width:30px;height:24px;fill:#fff}
+.cart-count{
+  position:absolute;top:-2px;left:17px;color:#f08804;font-weight:700;font-size:16px;
+}
+.cart-word{font-weight:700;font-size:13px}
+
+.subnav{
+  background:var(--nav-sub);color:#fff;display:flex;gap:4px;align-items:center;
+  padding:0 14px;overflow-x:auto;scrollbar-width:none;
+}
+.subnav::-webkit-scrollbar{display:none}
+.subnav a{
+  color:#fff;font-size:14px;padding:9px 8px;white-space:nowrap;
+  border:1px solid transparent;border-radius:2px;
+}
+.subnav a:hover{border-color:#fff;text-decoration:none}
+
+/* ---------- shell ---------- */
+.shell{max-width:1500px;margin:0 auto;padding:0 18px}
+.crumbs{font-size:12px;color:var(--muted);padding:9px 0}
+.crumbs a{color:var(--link)}
+.crumbs i{font-style:normal;color:#ccc;margin:0 6px}
+
+.detail{
+  display:grid;
+  grid-template-columns:minmax(0,7fr) minmax(0,9fr) minmax(260px,4.4fr);
+  gap:22px;padding-bottom:26px;
+}
+
+/* ---------- gallery ---------- */
+.gallery{display:flex;gap:12px;position:sticky;top:12px;align-self:start}
+.thumbs{display:flex;flex-direction:column;gap:9px;flex:none}
+.thumb{
+  width:52px;height:52px;border:1px solid var(--border);border-radius:5px;
+  background:#fff;padding:2px;cursor:pointer;overflow:hidden;
+}
+.thumb:hover{border-color:var(--link)}
+.thumb[aria-pressed="true"]{border:2px solid var(--link);box-shadow:0 0 3px rgba(0,113,133,.5)}
+.stage{
+  flex:1;border:1px solid #fff;display:grid;place-items:center;
+  overflow:hidden;background:#fff;
+}
+.stage svg{transition:transform .35s ease}
+.stage:hover svg{transform:scale(1.13)}
+.zoom-hint{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
+
+/* the shoe illustration */
+.shoe{--upper:#2b2b2b;--accent:#f2f2f2;--sole:#f7f7f7;--outsole:#3d3d3d;--lace:#e9e9e9;--toe:#333}
+.up{fill:var(--upper)}
+.ac{fill:var(--accent)}
+.so{fill:var(--sole)}
+.os{fill:var(--outsole)}
+.tc{fill:var(--toe)}
+.lace{stroke:var(--lace);stroke-width:5;stroke-linecap:round;fill:none}
+
+/* ---------- centre column ---------- */
+.title{font-size:24px;font-weight:400;line-height:1.25;margin:0 0 4px}
+.byline{font-size:14px;margin-bottom:4px}
+.rating-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px}
+.stars{position:relative;display:inline-block;white-space:nowrap;font-size:16px;letter-spacing:1px}
+.stars-bg{color:#d5d9d9}
+.stars-fg{position:absolute;inset:0;overflow:hidden;width:var(--pct,100%);color:var(--star)}
+.hr{border:0;border-top:1px solid #e7e7e7;margin:14px 0}
+
+.pricing{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.deal-tag{background:var(--price);color:#fff;font-size:13px;font-weight:700;padding:2px 7px;border-radius:2px}
+.price-now{font-size:28px;color:var(--price);font-weight:400}
+.price-now sup{font-size:14px;top:-.7em}
+.price-was{font-size:13px;color:var(--muted)}
+.price-was s{color:#565959}
+.tax-note{font-size:12px;color:var(--muted);margin-top:2px}
+
+.opt-label{font-size:14px;margin:14px 0 7px}
+.opt-label b{font-weight:700}
+.swatches{display:flex;gap:9px;flex-wrap:wrap}
+.swatch{
+  width:56px;height:56px;border:1px solid var(--border);border-radius:6px;
+  padding:2px;background:#fff;cursor:pointer;overflow:hidden;
+}
+.swatch:hover{border-color:var(--link)}
+.swatch[aria-pressed="true"]{border:2px solid var(--link)}
+.sizes{display:flex;gap:8px;flex-wrap:wrap}
+.size{
+  min-width:52px;padding:7px 4px;text-align:center;font-family:inherit;font-size:14px;
+  background:#fff;border:1px solid var(--border);border-radius:8px;cursor:pointer;
+  box-shadow:0 2px 5px rgba(15,17,17,.07);
+}
+.size:hover{border-color:#a1a5a5;background:#f7fafa}
+.size[aria-pressed="true"]{border:2px solid var(--link);background:#e7f2f4;font-weight:700}
+.size[disabled]{color:#aaa;background:#f7f7f7;cursor:not-allowed;text-decoration:line-through;box-shadow:none}
+
+.about h2,.section h2{font-size:19px;font-weight:700;margin:0 0 9px}
+.about ul{margin:0;padding-left:19px}
+.about li{margin-bottom:6px}
+.spec{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+.spec th,.spec td{text-align:left;padding:7px 10px;border-bottom:1px solid #eee;vertical-align:top}
+.spec th{background:#f0f2f2;font-weight:700;width:38%}
+
+/* ---------- buy box ---------- */
+.buybox{
+  border:1px solid var(--border);border-radius:8px;padding:16px;
+  align-self:start;position:sticky;top:12px;
+}
+.bb-price{font-size:24px;color:var(--price);margin-bottom:2px}
+.bb-price sup{font-size:13px;top:-.7em}
+.free-del{font-size:14px;margin:9px 0 3px}
+.deliver-date{font-weight:700}
+.stock{color:var(--success);font-size:18px;margin:12px 0 10px}
+.qty-row{display:flex;align-items:center;gap:7px;margin-bottom:13px;font-size:13px}
+.qty{
+  font-family:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--border);
+  border-radius:8px;background:#f0f2f2;cursor:pointer;box-shadow:0 2px 5px rgba(15,17,17,.07);
+}
+.btn{
+  display:block;width:100%;border:0;border-radius:100px;padding:10px 12px;
+  font-family:inherit;font-size:14px;cursor:pointer;margin-bottom:9px;color:var(--text);
+  box-shadow:0 2px 5px rgba(213,217,217,.5);
+}
+.btn-cart{background:var(--cart-yellow)}
+.btn-cart:hover{background:var(--cart-yellow-hover)}
+.btn-buy{background:var(--buy-orange)}
+.btn-buy:hover{background:var(--buy-orange-hover)}
+.btn-sec{background:#fff;border:1px solid var(--border)}
+.btn-sec:hover{background:#f7fafa}
+.secure{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin:11px 0 9px}
+.secure svg{width:14px;height:14px;fill:var(--muted);flex:none}
+.meta{font-size:13px;display:grid;grid-template-columns:auto 1fr;gap:3px 12px}
+.meta dt{color:var(--muted)}
+.meta dd{margin:0}
+.toast{
+  margin-top:11px;background:#e3f4e6;border:1px solid #b8e0c0;color:#0b6b1f;
+  border-radius:6px;padding:8px 10px;font-size:13px;
+}
+.toast[hidden]{display:none}
+
+/* ---------- reviews ---------- */
+.section{border-top:1px solid #e7e7e7;padding:22px 0}
+.reviews{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,9fr);gap:34px}
+.bars{display:grid;grid-template-columns:auto 1fr auto;gap:5px 9px;align-items:center;margin-top:12px}
+.bars a{white-space:nowrap}
+.bar{height:20px;background:#f0f2f2;border:1px solid #d1d5d5;border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--star)}
+.big-rating{font-size:16px;display:flex;align-items:center;gap:8px}
+.review{margin-bottom:22px}
+.reviewer{display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:5px}
+.avatar{width:26px;height:26px;border-radius:50%;background:#c8cdcd;display:grid;place-items:center;font-size:12px;color:#fff;flex:none}
+.rv-title{font-weight:700;font-size:14px;margin:3px 0}
+.rv-meta{font-size:12px;color:var(--muted);margin-bottom:5px}
+.verified{color:#c45500;font-size:12px;font-weight:700}
+.helpful{margin-top:8px}
+
+/* ---------- footer ---------- */
+.to-top{
+  background:#37475a;color:#fff;text-align:center;padding:14px;font-size:13px;cursor:pointer;
+  border:0;width:100%;font-family:inherit;
+}
+.to-top:hover{background:#485769}
+.foot{background:var(--nav-sub);color:#ddd;padding:34px 18px}
+.foot-cols{
+  max-width:1000px;margin:0 auto;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:26px;
+}
+.foot h3{font-size:15px;color:#fff;margin:0 0 9px}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot li{margin-bottom:6px}
+.foot a{color:#ddd;font-size:13px}
+.foot a:hover{color:#fff}
+.foot-note{
+  background:var(--nav-dark);color:#999;text-align:center;font-size:12px;padding:20px 18px;line-height:1.6;
+}
+
+@media (max-width:1000px){
+  .detail{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .buybox{grid-column:1 / -1;position:static}
+  .reviews{grid-template-columns:1fr;gap:20px}
+}
+@media (max-width:720px){
+  .detail{grid-template-columns:1fr}
+  .gallery{position:static;flex-direction:column-reverse}
+  .thumbs{flex-direction:row;overflow-x:auto}
+  .title{font-size:19px}
+  .masthead-inner{flex-wrap:wrap}
+  .searchbar{order:3;flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .stage:hover svg{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="hdr-box wordmark">shop<span>wave</span></div>
+
+      <div class="hdr-box">
+        <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        <span class="deliver-to">Deliver to<strong>New Delhi 110001</strong></span>
+      </div>
+
+      <div class="searchbar" role="search">
+        <select class="search-cat" aria-label="Search category">
+          <option>All</option><option selected>Shoes</option><option>Sportswear</option><option>Electronics</option>
+        </select>
+        <input class="search-input" type="search" value="nike running shoes men" aria-label="Search shopwave">
+        <button class="search-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16a6.47 6.47 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+        </button>
+      </div>
+
+      <div class="hdr-box deliver-to">Hello, Agnibha<strong>Account &amp; Lists</strong></div>
+      <div class="hdr-box deliver-to">Returns<strong>&amp; Orders</strong></div>
+
+      <a class="hdr-box cart-link" href="#">
+        <span class="cart-count" id="cartCount">0</span>
+        <svg class="cart-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 18zm10 0a2 2 0 1 0 .001 4.001A2 2 0 0 0 17 18zM7.2 14.6h9.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49L20.2 6.2l-3.55 6.4H7.87L4.27 5H1v2h2l3.6 7.59-1.35 2.44A2 2 0 0 0 7 20h12v-2H7.42a.25.25 0 0 1-.22-.37z"/></svg>
+        <span class="cart-word">Cart</span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="subnav" aria-label="Departments">
+    <a href="#">All</a><a href="#">Today's Deals</a><a href="#">Men's Shoes</a>
+    <a href="#">Running</a><a href="#">Training &amp; Gym</a><a href="#">Sneakers</a>
+    <a href="#">Sportswear</a><a href="#">Customer Service</a><a href="#">Sell</a><a href="#">Gift Cards</a>
+  </nav>
+</header>
+
+<main class="shell">
+  <p class="crumbs">
+    <a href="#">Clothing &amp; Accessories</a><i>›</i><a href="#">Men</a><i>›</i>
+    <a href="#">Shoes</a><i>›</i><a href="#">Running Shoes</a>
+  </p>
+
+  <div class="detail">
+
+    <!-- GALLERY -->
+    <div class="gallery">
+      <div class="thumbs" role="group" aria-label="Colour thumbnails">
+        <button class="thumb" aria-pressed="true" data-colour="0" aria-label="Black / White"></button>
+        <button class="thumb" aria-pressed="false" data-colour="1" aria-label="Summit White / Volt"></button>
+        <button class="thumb" aria-pressed="false" data-colour="2" aria-label="Game Royal / Total Orange"></button>
+        <button class="thumb" aria-pressed="false" data-colour="3" aria-label="Wolf Grey / Pink Foam"></button>
+      </div>
+      <div>
+        <div class="stage">
+          <svg id="hero" class="shoe" viewBox="0 0 600 400" role="img" aria-label="Side profile of a running shoe">
+            <ellipse cx="300" cy="352" rx="235" ry="15" fill="#000" opacity=".07"/>
+            <!-- midsole -->
+            <path class="so" d="M60 310C58 278 90 260 135 256L430 246C502 242 548 268 550 302 551 316 542 324 528 324L80 324C66 324 60 318 60 310Z"/>
+            <!-- outsole -->
+            <path class="os" d="M62 314L550 312C551 331 534 341 508 341L100 341C74 341 62 331 62 314Z"/>
+            <path class="os" d="M150 300h48v14h-48zM230 297h48v14h-48zM310 295h48v14h-48zM390 292h48v14h-48z" opacity=".35"/>
+            <!-- upper -->
+            <path class="up" d="M88 258C92 224 120 204 166 196L302 174C342 168 356 148 366 132 374 119 390 113 406 116L452 125C488 132 500 156 502 186L506 254 90 262Z"/>
+            <!-- toe cap -->
+            <path class="tc" d="M88 258C92 224 118 205 162 197L186 246 156 260 90 262Z"/>
+            <!-- side accent panel -->
+            <path class="ac" d="M214 194C258 206 284 232 298 258L246 260C232 236 214 218 194 208Z"/>
+            <path class="ac" d="M470 148c16 12 24 26 26 44l6 62-30 2-6-64c-1-16-6-28-16-38Z" opacity=".55"/>
+            <!-- eyestay -->
+            <path class="ac" d="M196 202 340 178l6 22-146 24Z" opacity=".35"/>
+            <!-- laces -->
+            <g class="lace">
+              <path d="M212 206 236 190"/><path d="M246 199 270 183"/>
+              <path d="M280 192 304 177"/><path d="M312 186 334 172"/>
+            </g>
+            <!-- collar + heel tab -->
+            <path class="ac" d="M362 136c6-14 22-22 40-19l50 9-4 20-50-9c-10-2-18 2-22 10Z" opacity=".7"/>
+            <rect class="ac" x="452" y="116" width="34" height="16" rx="8"/>
+            <circle class="so" cx="196" cy="211" r="4"/><circle class="so" cx="232" cy="204" r="4"/>
+            <circle class="so" cx="268" cy="197" r="4"/><circle class="so" cx="304" cy="190" r="4"/>
+          </svg>
+        </div>
+        <p class="zoom-hint">Roll over image to zoom in</p>
+      </div>
+    </div>
+
+    <!-- CENTRE -->
+    <div>
+      <h1 class="title">Nike Air Zoom Pegasus 41 Men's Road Running Shoes, Breathable Mesh Upper</h1>
+      <p class="byline">Visit the <a href="#">Nike Store</a></p>
+
+      <div class="rating-row">
+        <span class="stars" style="--pct:87%"><span class="stars-bg">★★★★★</span><span class="stars-fg" aria-hidden="true">★★★★★</span></span>
+        <a href="#reviews">4.3</a>
+        <a href="#reviews">2,847 ratings</a>
+        <span style="color:var(--muted)">|</span>
+        <a href="#">Search this page</a>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin:4px 0 0">1K+ bought in past month</p>
+
+      <hr class="hr">
+
+      <div class="pricing">
+        <span class="deal-tag">-13%</span>
+        <span class="price-now">₹12,995<sup>00</sup></span>
+      </div>
+      <p class="price-was">M.R.P.: <s>₹14,995.00</s></p>
+      <p class="tax-note">Inclusive of all taxes</p>
+      <p class="tax-note">EMI starts at ₹630 per month. <a href="#">EMI options</a></p>
+
+      <hr class="hr">
+
+      <p class="opt-label">Colour: <b id="colourName">Black / White</b></p>
+      <div class="swatches" role="group" aria-label="Choose a colour">
+        <button class="swatch" aria-pressed="true" data-colour="0" aria-label="Black / White"></button>
+        <button class="swatch" aria-pressed="false" data-colour="1" aria-label="Summit White / Volt"></button>
+        <button class="swatch" aria-pressed="false" data-colour="2" aria-label="Game Royal / Total Orange"></button>
+        <button class="swatch" aria-pressed="false" data-colour="3" aria-label="Wolf Grey / Pink Foam"></button>
+      </div>
+
+      <p class="opt-label">Size: <b id="sizeName">Select</b> <a href="#" style="font-weight:400;margin-left:8px">Size chart</a></p>
+      <div class="sizes" role="group" aria-label="Choose a UK size">
+        <button class="size" aria-pressed="false">UK 6</button>
+        <button class="size" aria-pressed="false">UK 7</button>
+        <button class="size" aria-pressed="true">UK 8</button>
+        <button class="size" aria-pressed="false">UK 9</button>
+        <button class="size" disabled>UK 10</button>
+        <button class="size" aria-pressed="false">UK 11</button>
+      </div>
+
+      <hr class="hr">
+
+      <div class="about">
+        <h2>About this item</h2>
+        <ul>
+          <li>Responsive foam midsole with a full-length air unit returns energy on every stride, so long runs feel lighter at the end than they do at the start.</li>
+          <li>Engineered mesh upper places breathability over the forefoot and structure around the midfoot, where you actually need the hold.</li>
+          <li>Wider forefoot platform and a flared heel give you a more stable landing on road and treadmill alike.</li>
+          <li>Waffle-inspired rubber outsole grips wet tarmac and resists wear at the high-abrasion zones.</li>
+          <li>Padded collar and tongue reduce lace pressure across the top of the foot.</li>
+          <li>Weight: 289 g (UK 8, single shoe). Heel-to-toe drop: 10 mm.</li>
+        </ul>
+      </div>
+
+      <hr class="hr">
+
+      <h2 style="font-size:19px;margin:0 0 4px">Product details</h2>
+      <table class="spec">
+        <tbody>
+          <tr><th scope="row">Brand</th><td>Nike</td></tr>
+          <tr><th scope="row">Model name</th><td>Air Zoom Pegasus 41</td></tr>
+          <tr><th scope="row">Department</th><td>Men</td></tr>
+          <tr><th scope="row">Outer material</th><td>Engineered mesh</td></tr>
+          <tr><th scope="row">Sole material</th><td>Rubber</td></tr>
+          <tr><th scope="row">Closure type</th><td>Lace-up</td></tr>
+          <tr><th scope="row">Heel type</th><td>Flat</td></tr>
+          <tr><th scope="row">Water resistance</th><td>Not water resistant</td></tr>
+          <tr><th scope="row">Country of origin</th><td>Vietnam</td></tr>
+          <tr><th scope="row">Item weight</th><td>289 g</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BUY BOX -->
+    <aside class="buybox" aria-label="Buy box">
+      <p class="bb-price">₹12,995<sup>00</sup></p>
+      <p style="font-size:12px;color:var(--muted);margin:0">Inclusive of all taxes</p>
+
+      <p class="free-del"><b>FREE delivery</b> <span class="deliver-date">Friday, 21 August</span> on your first order.</p>
+      <p style="font-size:13px;color:var(--muted);margin:0">Or fastest delivery <b style="color:var(--text)">Tomorrow, 13 August</b>. Order within <span style="color:var(--success)">9 hrs 42 mins</span>.</p>
+
+      <p class="stock">In stock</p>
+
+      <div class="qty-row">
+        <label for="qty">Quantity:</label>
+        <select class="qty" id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+      </div>
+
+      <button class="btn btn-cart" id="addBtn">Add to Cart</button>
+      <button class="btn btn-buy">Buy Now</button>
+      <div class="toast" id="toast" hidden role="status"></div>
+
+      <p class="secure">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11z"/></svg>
+        Secure transaction
+      </p>
+
+      <dl class="meta">
+        <dt>Ships from</dt><dd>shopwave</dd>
+        <dt>Sold by</dt><dd><a href="#">Nike Official Store</a></dd>
+        <dt>Payment</dt><dd><a href="#">Secure transaction</a></dd>
+        <dt>Returns</dt><dd><a href="#">10 days replacement</a></dd>
+      </dl>
+
+      <hr class="hr">
+      <button class="btn btn-sec">Add to Wish List</button>
+    </aside>
+  </div>
+
+  <!-- REVIEWS -->
+  <section class="section" id="reviews">
+    <div class="reviews">
+      <div>
+        <h2>Customer reviews</h2>
+        <p class="big-rating">
+          <span class="stars" style="--pct:87%"><span class="stars-bg">★★★★★</span><span class="stars-fg" aria-hidden="true">★★★★★</span></span>
+          4.3 out of 5
+        </p>
+        <p style="font-size:13px;color:var(--muted);margin:2px 0 0">2,847 global ratings</p>
+
+        <div class="bars">
+          <a href="#">5 star</a><span class="bar"><i style="width:68%"></i></span><a href="#">68%</a>
+          <a href="#">4 star</a><span class="bar"><i style="width:19%"></i></span><a href="#">19%</a>
+          <a href="#">3 star</a><span class="bar"><i style="width:7%"></i></span><a href="#">7%</a>
+          <a href="#">2 star</a><span class="bar"><i style="width:3%"></i></span><a href="#">3%</a>
+          <a href="#">1 star</a><span class="bar"><i style="width:3%"></i></span><a href="#">3%</a>
+        </div>
+
+        <hr class="hr">
+        <h3 style="font-size:16px;margin:0 0 6px">Review this product</h3>
+        <p style="font-size:13px;color:var(--muted);margin:0 0 10px">Share your thoughts with other customers</p>
+        <button class="btn btn-sec">Write a customer review</button>
+      </div>
+
+      <div>
+        <h2>Top reviews from India</h2>
+
+        <article class="review">
+          <div class="reviewer"><span class="avatar">R</span><b>Rohit M.</b></div>
+          <span class="stars" style="--pct:100%"><span class="stars-bg">★★★★★</span><span class="stars-fg" aria-hidden="true">★★★★★</span></span>
+          <p class="rv-title">Held up through a full half-marathon block</p>
+          <p class="rv-meta">Reviewed in India on 2 August 2026 · <span class="verified">Verified Purchase</span></p>
+          <p style="margin:0">Ran about 320 km in these over ten weeks, mostly on Delhi road surfaces, and the midsole still feels springy. The forefoot is roomier than the Pegasus 40 — I stopped losing a toenail every long run. Size true to your usual UK size.</p>
+          <p class="helpful"><button class="btn btn-sec" style="width:auto;padding:5px 16px">Helpful</button> <a href="#" style="margin-left:10px">Report</a></p>
+        </article>
+
+        <article class="review">
+          <div class="reviewer"><span class="avatar">S</span><b>Sneha K.</b></div>
+          <span class="stars" style="--pct:80%"><span class="stars-bg">★★★★★</span><span class="stars-fg" aria-hidden="true">★★★★★</span></span>
+          <p class="rv-title">Great cushioning, runs slightly warm</p>
+          <p class="rv-meta">Reviewed in India on 27 July 2026 · <span class="verified">Verified Purchase</span></p>
+          <p style="margin:0">Comfortable straight out of the box with no break-in period. Only complaint is that the mesh traps heat in humid weather — fine at 6 am, less fine at noon. Docking one star for that.</p>
+          <p class="helpful"><button class="btn btn-sec" style="width:auto;padding:5px 16px">Helpful</button> <a href="#" style="margin-left:10px">Report</a></p>
+        </article>
+
+        <article class="review">
+          <div class="reviewer"><span class="avatar">A</span><b>Arjun P.</b></div>
+          <span class="stars" style="--pct:60%"><span class="stars-bg">★★★★★</span><span class="stars-fg" aria-hidden="true">★★★★★</span></span>
+          <p class="rv-title">Good shoe, ordinary upgrade</p>
+          <p class="rv-meta">Reviewed in India on 14 July 2026 · <span class="verified">Verified Purchase</span></p>
+          <p style="margin:0">If you already own the 40, there is not much here to justify the price. Nice shoe on its own merits, and the outsole grip in the rain is genuinely better, but it is an iteration rather than a redesign.</p>
+          <p class="helpful"><button class="btn btn-sec" style="width:auto;padding:5px 16px">Helpful</button> <a href="#" style="margin-left:10px">Report</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<button class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</button>
+
+<footer>
+  <div class="foot">
+    <div class="foot-cols">
+      <div><h3>Get to know us</h3><ul><li><a href="#">About shopwave</a></li><li><a href="#">Careers</a></li><li><a href="#">Press releases</a></li></ul></div>
+      <div><h3>Connect with us</h3><ul><li><a href="#">Facebook</a></li><li><a href="#">Twitter</a></li><li><a href="#">Instagram</a></li></ul></div>
+      <div><h3>Make money with us</h3><ul><li><a href="#">Sell on shopwave</a></li><li><a href="#">Become an affiliate</a></li><li><a href="#">Advertise your products</a></li></ul></div>
+      <div><h3>Let us help you</h3><ul><li><a href="#">Your account</a></li><li><a href="#">Returns centre</a></li><li><a href="#">Help</a></li></ul></div>
+    </div>
+  </div>
+  <p class="foot-note">
+    Demo project — a front-end layout exercise. Not a real store, and not affiliated with or endorsed by Amazon or Nike.<br>
+    Nothing here can be purchased, and no data is collected. Product imagery is an original illustration.
+  </p>
+</footer>
+
+<script>
+(function () {
+  var colourways = [
+    { name:'Black / White',            upper:'#2b2b2b', accent:'#f2f2f2', sole:'#fafafa', outsole:'#1f1f1f', lace:'#e9e9e9', toe:'#1f1f1f' },
+    { name:'Summit White / Volt',      upper:'#eceff0', accent:'#d7ff2e', sole:'#ffffff', outsole:'#bfc4c4', lace:'#c9cdcd', toe:'#dfe3e3' },
+    { name:'Game Royal / Total Orange',upper:'#1d4fa8', accent:'#ff6b1a', sole:'#f2f4f6', outsole:'#12306a', lace:'#ffd9c2', toe:'#173f87' },
+    { name:'Wolf Grey / Pink Foam',    upper:'#9aa0a6', accent:'#ff5c8a', sole:'#ffffff', outsole:'#6d7378', lace:'#f4f4f4', toe:'#82888d' }
+  ];
+
+  function paint(el, c) {
+    el.style.setProperty('--upper', c.upper);
+    el.style.setProperty('--accent', c.accent);
+    el.style.setProperty('--sole', c.sole);
+    el.style.setProperty('--outsole', c.outsole);
+    el.style.setProperty('--lace', c.lace);
+    el.style.setProperty('--toe', c.toe);
+  }
+
+  var hero = document.getElementById('hero');
+  var colourName = document.getElementById('colourName');
+
+  // clone the hero SVG into every thumbnail and swatch
+  document.querySelectorAll('.thumb, .swatch').forEach(function (btn) {
+    var mini = hero.cloneNode(true);
+    mini.removeAttribute('id');
+    mini.setAttribute('aria-hidden', 'true');
+    mini.setAttribute('role', 'presentation');
+    mini.removeAttribute('aria-label');
+    paint(mini, colourways[+btn.dataset.colour]);
+    btn.appendChild(mini);
+  });
+
+  function selectColour(index) {
+    var c = colourways[index];
+    paint(hero, c);
+    colourName.textContent = c.name;
+    document.querySelectorAll('.thumb, .swatch').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(+b.dataset.colour === index));
+    });
+  }
+
+  document.querySelectorAll('.thumb, .swatch').forEach(function (btn) {
+    btn.addEventListener('click', function () { selectColour(+btn.dataset.colour); });
+    btn.addEventListener('mouseenter', function () {
+      if (btn.classList.contains('thumb')) selectColour(+btn.dataset.colour);
+    });
+  });
+
+  // size picker
+  var sizeName = document.getElementById('sizeName');
+  var sizeButtons = document.querySelectorAll('.size:not([disabled])');
+  sizeButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      sizeButtons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+      btn.setAttribute('aria-pressed', 'true');
+      sizeName.textContent = btn.textContent;
+    });
+  });
+  sizeName.textContent = document.querySelector('.size[aria-pressed="true"]').textContent;
+
+  // add to cart
+  var count = 0;
+  var cartCount = document.getElementById('cartCount');
+  var toast = document.getElementById('toast');
+  document.getElementById('addBtn').addEventListener('click', function () {
+    count += Number(document.getElementById('qty').value);
+    cartCount.textContent = count;
+    toast.hidden = false;
+    toast.textContent = 'Added to Cart — ' + sizeName.textContent + ', ' + colourName.textContent +
+      ' (' + count + ' item' + (count === 1 ? '' : 's') + ')';
+  });
+
+  selectColour(0);
+})();
+</script>
+</body>
+</html>
